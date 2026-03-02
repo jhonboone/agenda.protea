@@ -15,5 +15,9 @@ import java.util.List;
 public interface AgendamentoRepository extends JpaRepository<Agendamento, Long> {
     List<Agendamento> findAllByTenantId(String tenantId);
 
-    boolean existsByDataHoraAndProfissionalAndTenantId(LocalDateTime data, String prof, String tenantId);
+    boolean existsByDataHoraAgendamentoAndNomeProfissionalAndTenantId(
+            LocalDateTime dataHoraAgendamento,
+            String nomeProfissional,
+            String tenantId
+    );
 }

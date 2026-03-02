@@ -18,16 +18,23 @@ public class AgendamentoService {
 
     //POST
     public Agendamento save(AgendamentoRequestDTO dto) {
-        if (repository.existsByDataHoraAndProfissionalAndTenantId(
+        boolean existe = repository.existsByDataHoraAgendamentoAndNomeProfissionalAndTenantId(
                 dto.dataHora(),
                 dto.profissional(),
-                dto.tenantId())) {
+                dto.tenantId()
+        );
+
+        if (existe) {
             throw new RuntimeException("Horário do profissional desta unidade está ocupado");
         }
 
-        Agendamento entity = new Agendamento();
-        BeanUtils.copyProperties(dto, entity); // Copia dados DTO > Entity
-        return repository.save(entity);
+        Agendamento agendamento = new Agendamento();
+        agendamento.setNomeProfissional(dto.profissional());
+        agendamento.setNomePaciente(dto.paciente());
+        agendamento.setDataHoraAgendamento(dto.dataHora());
+        agendamento.setTenantId(dto.tenantId());
+
+        return repository.save(agendamento);
     }
 
     //GET
