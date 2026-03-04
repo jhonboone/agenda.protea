@@ -19,9 +19,9 @@ public class CorsConfig {
         config.setAllowCredentials(true);
 
         config.setAllowedOrigins(Arrays.asList(
-                "http://localhost:5173",              // Desenvolvimento local
-                "http://localhost:3000",              // Desenvolvimento alternativo
-                "https://agenda-protea-front.vercel.app"  // ← SEU DOMÍNIO VERCEL!
+                "http://localhost:5173",
+                "http://localhost:3000",
+                "https://agenda-protea-front.vercel.app"
         ));
 
         config.setAllowedHeaders(Arrays.asList("*"));

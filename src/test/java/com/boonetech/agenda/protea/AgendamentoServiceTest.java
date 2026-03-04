@@ -12,7 +12,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.*;  // ✅ verify, times, any, when
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class AgendamentoServiceTest {

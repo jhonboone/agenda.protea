@@ -4,9 +4,8 @@ import com.boonetech.agenda.protea.dto.AgendamentoRequestDTO;
 import com.boonetech.agenda.protea.infraestrucutre.entity.Agendamento;
 import com.boonetech.agenda.protea.infraestrucutre.repository.AgendamentoRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
-import tools.jackson.databind.util.BeanUtil;
+
 
 import java.util.List;
 
