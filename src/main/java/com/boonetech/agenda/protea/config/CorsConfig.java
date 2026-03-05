@@ -21,7 +21,7 @@ public class CorsConfig {
         config.setAllowedOrigins(Arrays.asList(
                 "http://localhost:5173",
                 "http://localhost:3000",
-                "https://seu-projeto.vercel.app"
+                "https://protea-agenda-front.vercel.app"
         ));
 
         config.setAllowedHeaders(Arrays.asList("*"));
