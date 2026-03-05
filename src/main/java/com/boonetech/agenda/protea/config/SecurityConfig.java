@@ -21,6 +21,7 @@ public class SecurityConfig {
                     var config = new CorsConfiguration();
                     config.setAllowedOrigins(List.of(
                             "https://protea-agenda-front.vercel.app",
+                            "https://protea-agenda-front-jhonboones-projects.vercel.app",
                             "http://localhost:5173"));
                     config.setAllowedMethods(List.of("*"));
                     config.setAllowedHeaders(List.of("*"));
