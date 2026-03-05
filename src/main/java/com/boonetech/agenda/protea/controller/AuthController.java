@@ -51,4 +51,15 @@ public class AuthController {
 
         return ResponseEntity.ok(response);
     }
+
+    @PostMapping("/registrar")
+    public ResponseEntity<?> registrar(@RequestBody LoginRequest request) {
+        Usuario usuario = new Usuario();
+        usuario.setEmail(request.getEmail());
+        usuario.setSenha(passwordEncoder.encode(request.getSenha()));
+        usuario.setTenantId("unidade-01");
+        usuario.setRole(Usuario.Role.ADMIN);
+        usuarioRepository.save(usuario);
+        return ResponseEntity.ok("Usuário criado!");
+    }
 }
